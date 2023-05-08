@@ -1,17 +1,10 @@
 import Layout from "./components/support/layout/Layout";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Hello world!</div>,
-  },
-]);
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <Layout>
-      <RouterProvider router={router} />
+      <Outlet />
     </Layout>
   );
 }
