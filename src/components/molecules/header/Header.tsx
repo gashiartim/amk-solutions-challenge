@@ -7,11 +7,13 @@ export interface IHeader {}
 const Header: FunctionComponent<IHeader> = (props) => {
   const location = useLocation();
 
-  console.log({ location });
+  const path = location.pathname === "/" ? "Home" : "Edit";
 
   return (
-    <div className="container py-2 text-white bg-blue-600">
+    <div className="container flex items-center py-2 text-lg text-white bg-blue-600 gap-x-1">
       <Logo />
+      <span>&gt;</span>
+      <span>{path}</span>
     </div>
   );
 };
