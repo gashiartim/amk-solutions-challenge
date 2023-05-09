@@ -10,10 +10,12 @@ const Header: FunctionComponent<IHeader> = (props) => {
   const path = location.pathname === "/" ? "Home" : "Edit";
 
   return (
-    <div className="container flex items-center py-2 text-lg text-white bg-blue-600 gap-x-1">
-      <Logo />
-      <span>&gt;</span>
-      <span>{path}</span>
+    <div className="lg:bg-blue-600">
+      <div className="container flex items-center py-2 text-lg text-white bg-blue-600 gap-x-1">
+        <Logo />
+        <span>&gt;</span>
+        <span>{path}</span>
+      </div>
     </div>
   );
 };

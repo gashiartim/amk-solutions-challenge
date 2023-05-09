@@ -1,3 +1,4 @@
+import { TaskStatusType } from "lib/context/tasks-context/TasksContext";
 import { ChangeEventHandler, FunctionComponent } from "react";
 import { UseFormRegister } from "react-hook-form";
 
@@ -12,7 +13,7 @@ export interface ISelect {
   register?: UseFormRegister<any>;
   touched?: boolean;
   options: Array<{
-    value: string;
+    value: TaskStatusType;
     label: string;
   }>;
 }
@@ -36,9 +37,9 @@ const Select: FunctionComponent<ISelect> = ({
       <select
         {...selectProps}
         {...register?.(selectProps.name)}
-        className="w-full h-full p-0 bg-transparent border-none shadow-none focus:outline-none"
+        className="relative w-full h-full p-0 bg-transparent border-none shadow-none focus:outline-none"
       >
-        {options.map((option, index) => (
+        {options?.map((option, index) => (
           <option
             key={`option-${index}-${selectProps.name}`}
             value={option.value}
